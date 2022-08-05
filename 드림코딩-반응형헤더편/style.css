@@ -1,0 +1,102 @@
+ :root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: #d49566;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+}
+
+header div{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 12px;
+}
+
+.menuLogo {
+    font-size: 24px;
+}
+
+.menuLogo i {
+    color: #d49466;
+}
+
+.menuList {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.menuList li {
+    padding: 8px 12px;
+}
+
+.menuList li:hover {
+    background-color: #d49466;
+    border-radius: 4px;
+}
+
+.menuIcon {
+    display: flex;
+    list-style: none;
+    color: white;
+    padding-left: 0;
+}
+
+.menuIcon i {
+    color: white;
+    padding: 8px 12px;
+}
+
+.navbar__toogleBtn {
+    display: none;
+    color: white;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: #d49466;
+}
+
+
+/* 줄어들었을 때 어느정도에서 정렬을 바꿔보기 */
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        /* 수평 -> 왼쪽으로 이동*/
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .menuList {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .menuList li{
+        width: 100%; /* 너비가 넓어지면 텍스트는 자동으로 왼쪽 정렬 */
+        text-align: center;
+    }
+    .menuIcon {
+        display: none;
+        justify-content: center; /* 아이콘들의 flex방향은 row! 중앙 정렬하기 위한 코드 */
+        width: 100%;
+
+    }
+    .navbar__toogleBtn {
+        display: block;
+    }
+
+    .menuList.active,
+    .menuIcon.active {
+        display: flex;
+    }
+} 
